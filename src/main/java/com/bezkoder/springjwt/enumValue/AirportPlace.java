@@ -1,0 +1,24 @@
+package com.bezkoder.springjwt.enumValue;
+
+public enum AirportPlace {
+	Chhatrapati_Shivaji_International_Airport_BOM_Mumbai,
+	Kempegowda_International_Airport_BLR_Bangalore,
+	Chennai_International_Airport_MAA_Chennai,
+	Netaji_Subhas_Chandra_Bose_International_Airport_CCU_Kolkata,
+	Chaudhary_Charan_Singh_International_Airport_LKO_Lucknow,
+	Sri_Guru_Ram_Dass_Jee_International_Airport_ATQ_Amritsar,
+	Visakhapatnam_International_Airport_VTZ_Visakhapatnam,
+	Kannur_International_Airport_CNN_Kannur,
+	Surat_International_Airport_STV_Surat,
+	Devi_Ahilya_Bai_Holkar_Airport_IDR_Indore,
+	Cochin_International_Airport_COK_Kochi,
+	Sardar_Vallabhbhai_Patel_International_Airport_AMD_Ahmedabad,
+	Indira_Gandhi_International_Airport_DEL_Delhi,
+	Dabolim_Airport_GOI_Goa,
+	Pune_Airport_PNQ_Pune,
+	Thiruvananthapuram_International_Airport_TRV_Thiruvananthapuram,
+	Coimbatore_International_Airport_CJB_Coimbatore,
+	Calicut_International_Airport_CCJ_Calicut,
+	Biju_Patnaik_International_Airport_BBI_Bhubaneswar;
+	
+}
