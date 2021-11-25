@@ -1,6 +1,7 @@
 package com.bezkoder.springjwt.bookingService;
 
-import javax.validation.Valid;
+
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,5 +29,21 @@ public class AdminService {
 			return new ResponseEntity<Object>(new MessageResponse("Success: New Flight is created!"),HttpStatus.CREATED);
 		}
 	}
+
+	public ResponseEntity<Object> availableOperation(String flightNumber, Boolean available) {
+		System.out.println("Check param: "+flightNumber);
+		System.out.println(adminRepository.findByFlightNumber(flightNumber));
+		Optional<FlightInfo> f=adminRepository.findByFlightNumber(flightNumber);
+		System.out.println("flight: "+f);
+		if(!f.isPresent()) {
+			return new ResponseEntity<Object>(new MessageResponse("No Flight Found!"),HttpStatus.BAD_REQUEST);
+		}else {
+			f.get().setAvailable(available);
+			return new ResponseEntity<Object>(new MessageResponse("Updated Successfully!"),HttpStatus.OK);
+		}
+		
+	}
+
+	
 	
 }

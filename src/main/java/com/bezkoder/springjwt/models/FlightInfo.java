@@ -1,6 +1,7 @@
 package com.bezkoder.springjwt.models;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -16,6 +17,8 @@ import org.hibernate.validator.constraints.Range;
 import com.bezkoder.springjwt.enumValue.Airline;
 import com.bezkoder.springjwt.enumValue.AirportPlace;
 import com.bezkoder.springjwt.enumValue.MealType;
+
+
 
 
 
@@ -39,13 +42,12 @@ public class FlightInfo {
 	private LocalDateTime endDateTime;
 	private String instrument;
 	
-	@Enumerated(EnumType.STRING)
-	private MealType meal;
+	
+	private String[] meal;
+	
 	private int seatAvailable;
 	private boolean available;
 	
-
-
 	public Integer getId() {
 		return id;
 	}
@@ -94,12 +96,6 @@ public class FlightInfo {
 	public void setInstrument(String instrument) {
 		this.instrument = instrument;
 	}
-	public MealType getMeal() {
-		return meal;
-	}
-	public void setMeal(MealType meal) {
-		this.meal = meal;
-	}
 	public boolean isAvailable() {
 		return available;
 	}
@@ -111,6 +107,12 @@ public class FlightInfo {
 	}
 	public void setSeatAvailable(int seatAvailable) {
 		this.seatAvailable = seatAvailable;
+	}
+	public String[] getMeal() {
+		return meal;
+	}
+	public void setMeal(String[] meal) {
+		this.meal = meal;
 	}
 	
 	

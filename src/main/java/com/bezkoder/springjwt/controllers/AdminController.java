@@ -8,6 +8,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bezkoder.springjwt.bookingService.AdminService;
@@ -25,5 +26,9 @@ public class AdminController {
 	public ResponseEntity<Object> createNewFLight(@Valid @RequestBody FlightInfo flightInfo ){
 		return adminService.createFlight(flightInfo);
 	}
-
+	@PostMapping("/airlines/update")
+	@PreAuthorize("hasRole('ADMIN')")
+	public ResponseEntity<Object> updateFlightInfo(@RequestParam String flightNumber,Boolean available ){
+		return adminService.availableOperation(flightNumber,available);
+	}
 }
