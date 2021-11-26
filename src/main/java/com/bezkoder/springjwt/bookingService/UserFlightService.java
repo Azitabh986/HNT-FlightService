@@ -3,6 +3,8 @@ package com.bezkoder.springjwt.bookingService;
 import java.util.Optional;
 import java.util.Random;
 
+import javax.transaction.Transactional;
+
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -27,7 +29,7 @@ public class UserFlightService {
 	@Autowired
 	private FlightRepo flightRepo;
 	
-
+	@Transactional
 	public ResponseEntity<Object> doBookTicket(String flightNumber, TicketBooking ticketBooking) {
 		
 		if(!flightRepo.existsByFlightNumber(flightNumber)) {
@@ -42,7 +44,7 @@ public class UserFlightService {
 		}
 	}
 
-
+	@Transactional
 	public ResponseEntity<Object> doPaymentOperation(String bookedId, String paymentStatus, String flightNumber) {
 		Optional<TicketBooking> tb=bookingRepository.findByBookedId(bookedId);
 		TicketBooking tbooking=tb.get();
