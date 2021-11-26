@@ -25,6 +25,30 @@ public class PassengerDetails {
 	private String name;
 	@Enumerated(EnumType.STRING)
 	private Gender gender;
-	@Range(min=1,max=100)
 	private int age;
+	public Integer getPassengerId() {
+		return passengerId;
+	}
+	public void setPassengerId(Integer passengerId) {
+		this.passengerId = passengerId;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Gender getGender() {
+		return gender;
+	}
+	public void setGender(Gender gender) {
+		this.gender = gender;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
 }

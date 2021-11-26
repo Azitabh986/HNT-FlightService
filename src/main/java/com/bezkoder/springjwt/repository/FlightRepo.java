@@ -7,9 +7,9 @@ import org.springframework.stereotype.Repository;
 
 import com.bezkoder.springjwt.models.FlightInfo;
 
+
 @Repository
-public interface AdminRepository extends JpaRepository<FlightInfo, Integer> {
-	
+public interface FlightRepo extends JpaRepository<FlightInfo, Integer> {
 	Boolean existsByFlightNumber(String flightNumber);
 	Optional<FlightInfo> findByFlightNumber(String flightNumber);
 }

@@ -34,7 +34,7 @@ import com.bezkoder.springjwt.security.services.UserDetailsImpl;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api/v1.0/admin")
+@RequestMapping("/api/v1.0")
 public class AuthController {
 	@Autowired
 	AuthenticationManager authenticationManager;
